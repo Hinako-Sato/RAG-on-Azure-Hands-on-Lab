@@ -29,7 +29,7 @@ resource environment 'Microsoft.App/managedEnvironments@2024-03-01' = {
       destination: 'log-analytics'
       logAnalyticsConfiguration: {
         customerId: logAnalyticsWorkspace.properties.customerId
-        sharedKey: secure(logAnalyticsWorkspace.listKeys().primarySharedKey)
+        sharedKey: logAnalyticsWorkspace.listKeys().primarySharedKey
       }
     }
     workloadProfiles: [
