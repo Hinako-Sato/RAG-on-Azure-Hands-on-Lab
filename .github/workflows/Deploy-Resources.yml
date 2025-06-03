@@ -36,13 +36,13 @@ jobs:
           template: ./bicep/modules/virtualnetwork_spoke.bicep
           parameters: ./bicep/parameters/virtualnetwork_spoke.bicepparam
       
-      - name: Creating Container Registry and Container Apps
-        uses: azure/arm-deploy@v1
-        with:
-          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          resourceGroupName: ${{ github.event.inputs.resourceGroup }}
-          template: ./bicep/templates/container.bicep
-          parameters: ./bicep/parameters/container.bicepparam
+      # - name: Creating Container Registry and Container Apps
+      #   uses: azure/arm-deploy@v1
+      #   with:
+      #     subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      #     resourceGroupName: ${{ github.event.inputs.resourceGroup }}
+      #     template: ./bicep/templates/container.bicep
+      #     parameters: ./bicep/parameters/container.bicepparam
       
       - name: Creating AI Search and OpenAI Service
         uses: azure/arm-deploy@v1
